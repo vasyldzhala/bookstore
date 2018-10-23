@@ -4557,6 +4557,14 @@ main {
   padding: 10px 0; }
   .aside-categories i {
     transform: scale(0.5); }
+  .aside-categories .red {
+    color: #e64c66; }
+  .aside-categories .yellow {
+    color: #ffab00; }
+  .aside-categories .blue {
+    color: #00bfdd; }
+  .aside-categories .violet {
+    color: #7874cf; }
 
 .aside-reminder i {
   margin-top: 18px;
