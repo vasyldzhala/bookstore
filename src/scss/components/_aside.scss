@@ -1,0 +1,170 @@
+.page-aside {
+  position: relative;
+  overflow: visible;
+}
+.aside-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $page-aside-width;
+  height: calc(100vh - #{$page-hed-foot});
+  @media (max-width: 768px) {
+    height: calc(100vh - #{$page-hed-foot} - #{$main-header-height-sx});
+  }
+  z-index: 600;
+  background-color: get_col(aside-bg);
+}
+.aside-section {
+  width: 100%;
+  background-color: transparent;
+  padding: 0 0 1px 0;
+
+  &-border {
+    margin-bottom: 6px;
+    box-shadow: 0 1px #141824, 0 5px #181e2c, 0 6px #78829d;
+  }
+}
+
+.aside-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  button, button span {
+    font-size: 13px;
+    line-height: 2;
+    text-align: left;
+    text-transform: capitalize;
+    color: #78829d;
+    background-color: transparent;
+    height: 38px;
+    width: 100%;
+    transition-duration: 0.3s;
+  }
+
+  button {
+    i {
+      padding: 0 12px 0 22px;
+    }
+    &:hover {
+      background-color: #15a4fa;
+      * {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.aside-categories {
+  padding: 10px 0;
+  i {
+    transform: scale(0.5);
+  }
+}
+.aside-reminder {
+  i {
+    margin-top: 18px;
+    padding: 0 12px 0 22px;
+  }
+  p {
+    width: 70%;
+  }
+  i, p {
+    font-size: 12px;
+    color: #78829d;
+    background-color: transparent;
+  }
+}
+
+.add-book {
+  height: 114px;
+  width: 100%;
+
+  &-button {
+    width: 80%;
+    height: 40%;
+    border-radius: 4px;
+    background-color: #f2795a;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    transition-duration: 0.3s;
+
+    &:hover {
+      color: #f2795a;
+      background-color: #ffffff;
+    }
+    i {
+      padding: 0 10px;
+    }
+  }
+}
+
+.page-aside .hidden {
+  display: none;
+}
+.aside-container {
+  transition-duration: 0.2s;
+}
+.toggle-aside-button i {
+  transition-duration: 0.5s;
+}
+.aside-section span,
+.aside-section p {
+  animation-name: smooth-appearance;
+  animation-duration: 0.5s;
+}
+
+@keyframes smooth-appearance {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1 }
+}
+
+@media (max-width: 768px) {
+  .add-book {
+    height: 70px;
+  }
+  @media (max-width: 450px) {
+    .page-aside .hidden {
+      display: flex;
+      height: 40px;
+    }
+    .toggle-aside-button {
+      width: 80%;
+      height: 80%;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: transparent;
+      transition-duration: 0.3s;
+      i {
+        font-size: 30px;
+        color: white;
+      }
+    }
+    .aside-toggled {
+      .toggle-aside-button i {
+        transform: rotate(180deg);
+      }
+      .aside-container {
+        width: 60px;
+      }
+      .add-book {
+        height: 70px;
+      }
+      .aside-section {
+        span,
+        p {
+          display: none;
+        }
+      }
+
+    }
+    .aside-list button {
+      white-space: nowrap;
+    }
+  }
+}
+

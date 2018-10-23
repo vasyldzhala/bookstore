@@ -1,0 +1,87 @@
+.page-header {
+  position: relative;
+  width: 100%;
+  height: $page-header-height;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: calc(100vh - #{$page-hed-foot});
+}
+.main-header {
+  position: relative;
+  z-index: 100;
+  width: calc(100vw - #{$page-aside-width});
+}
+.main-thumbnail-container {
+  box-sizing: border-box;
+  width: calc(100vw - #{$page-aside-width} - #{$scrollbar});
+  height: calc(100vh - #{$page-hed-foot} - #{$main-header-height});
+  padding: 20px 5px 10px 10px;
+  margin-right: $scrollbar;
+  overflow-y: auto;
+}
+
+.page-aside {
+  width: $page-aside-width;
+  height: calc(100vh - #{$page-hed-foot});
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background-color: #1f2637;
+
+  .aside-scrollable {
+    height: calc(100vh - #{$page-hed-foot} - #{$aside-buttons-height});
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+.page-footer {
+  width: 100%;
+  height: $page-footer-height;
+}
+
+@media (max-width: 992px) {
+
+  @media (max-width: 768px) {
+    main {
+      flex-direction: row;
+    }
+    .main-header {
+      order: 0;
+      height: $main-header-height-sx;
+      width: 100vw;
+    }
+    .page-aside {
+      order: 1;
+      height: calc(100vh - #{$page-hed-foot} - #{$main-header-height-sx});
+    }
+    .main-thumbnail-container {
+      order: 2;
+      height: calc(100vh - #{$page-hed-foot} - #{$main-header-height-sx});
+    }
+
+    @media (max-width: 450px) {
+      .page-aside {
+        width: $page-aside-width-sx;
+        height: calc(100vh - #{$page-hed-foot} - #{$main-header-height-sx});
+
+        .aside-scrollable {
+          height: calc(100vh - #{$page-hed-foot} - #{$main-header-height-sx} - #{$aside-buttons-height});
+          overflow-y: auto;
+          overflow-x: hidden;
+        }
+      }
+      .main-thumbnail-container {
+        width: calc(100vw - #{$page-aside-width-sx} - #{$scrollbar});
+        height: calc(100vh - #{$page-hed-foot} - #{$main-header-height-sx});
+      }
+    }
+  }
+
+}
+
+

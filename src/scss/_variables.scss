@@ -1,0 +1,27 @@
+$fa-font-path: "src/webfonts";
+
+
+$page-header-height: 45px;
+$page-footer-height: 45px;
+$page-hed-foot: $page-header-height + $page-footer-height;
+$page-aside-width: 200px;
+$page-aside-width-sx: 60px;
+$aside-buttons-height: 120px;
+$main-header-height: 120px;
+$main-header-height-sx: 40px;
+$scrollbar: 5px;
+
+$colors: (
+        scroll-bg: #ffffff,
+        scroll-thumb: #ccd5e4,
+        scroll-hover: #888,
+        page-header-bg: #2f364a,
+        main-header-bg: #eef1f7,
+        thumbnail-cont-bg: #ffffff,
+        aside-bg: #1f2637,
+        page-footer-bg: #181e2c
+
+);
+
+
+

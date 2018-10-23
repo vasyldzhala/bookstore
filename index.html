@@ -7,11 +7,8 @@
     <!--<link rel="icon" type="image/x-icon" href="img/__.svg">-->
     <!--<link rel="icon" type="image/png" href="img/__.png"/>-->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link rel="stylesheet" href="normalize.min.css">
     <link rel="stylesheet" href="src/fonts/fonts.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="app.css">
 
 </head>
 <body>
@@ -21,16 +18,17 @@
             <i class="fas fa-circle"></i>
         </div>
         <span class="header-logo">
-            <i class="fas fa-book" style="transform: skewX(-15deg);"></i>
+            <i class="fas fa-book skewx15"></i>
             MyBookApp
         </span>
         <div class="fb-row fb-start header-support">
-            <button>Help Center</button>
-            <button>Our Support</button>
+            <button class="hidden">Help Center</button>
+            <button class="hidden">Our Support</button>
+            <button class="shown" title="Support"><i class="fas fa-question-circle shown"></i></button>
             <button class="fb-row fb-start">
-                <img src="src/img/avatar-01.jpg" alt="">
-                <span>John Doe</span>
-                <i class="fas fa-check-circle"></i>
+                <img src="src/img/avatar-01.jpg" alt="" title="John Doe">
+                <span class="hidden">John Doe</span>
+                <i class="fas fa-check-circle hidden"></i>
             </button>
         </div>
     </header>
@@ -39,206 +37,352 @@
 
         <aside class="page-aside">
 
-            <section class="aside-section aside-section-border fb-row fb-center add-book">
-                <button class="add-book-button">+ ADD A BOOK</button>
-            </section>
-            <section class="aside-section aside-section-border">
-                <ul class="aside-list">
-                    <li>
-                        <button><i class="fas fa-book" style="transform: skewX(-15deg)"></i>Now Reading</button>
-                    </li>
-                    <li>
-                        <button><i class="fas fa-globe-asia"></i>Browse</button>
-                    </li>
-                    <li>
-                        <button><i class="fas fa-shopping-cart"></i>Buy Books</button>
-                    </li>
-                    <li>
-                        <button><i class="fas fa-star"></i>Favourite Books</button>
-                    </li>
-                    <li>
-                        <button><i class="fas fa-th-list"></i>Wishlist</button>
-                    </li>
-                    <li>
-                        <button><i class="far fa-clock"></i>History</button>
-                    </li>
-                </ul>
-            </section >
-            <section class="aside-section aside-section-border">
-                <ul class="aside-list aside-categories">
-                    <li>
-                        <button><i class="fas fa-circle" style="color:#e64c66"></i>Must Read Titles</button>
-                    </li>
-                    <li>
-                        <button><i class="fas fa-circle" style="color:#ffab00"></i>Best Of List</button>
-                    </li>
-                    <li>
-                        <button><i class="fas fa-circle" style="color:#00bfdd"></i>Classic Novels</button>
-                    </li>
-                    <li>
-                        <button><i class="fas fa-circle" style="color:#7874cf"></i>Non Fiction</button>
-                    </li>
-                </ul>
-            </section>
-            <section class="aside-section">
-                <ul class="aside-list aside-reminder">
-                    <li class="fb-row fb-start fb-top">
-                        <i class="far fa-clock"></i>
-                        <p>
-                            You added <strong>Fight Club</strong> by <strong>Chuck Palahniuk</strong> to your <strong>Must Read Titles</strong>. <br><br>
-                            24 minutes ago
-                        </p>
-                    </li>
-                    <li class="fb-row fb-start fb-top">
-                        <i class="far fa-clock"></i>
-                        <p>
-                            You added <strong>The Trial</strong> by <strong>Franz Kafka</strong> to your <strong>Must Read Titles</strong>. <br><br>
-                            48 minutes ago
-                        </p>
-                    </li>
-                </ul>
+            <div id="aside-toggled" class="aside-toggled">
+                <div class="aside-container">
+                    <section class="aside-section aside-section-border fb-row fb-center toggle-aside hidden">
+                        <button id="toggle-aside-button" class="toggle-aside-button" title="Toggle Aside Bar">
+                            <i class="fas fa-chevron-circle-left"></i>
+                        </button>
 
-            </section>
+                    </section>
 
+                    <section class="aside-section aside-section-border fb-row fb-center add-book">
+                        <button class="add-book-button" title="Add A Book">
+                            <i class="fas fa-plus"></i>
+                            <span>ADD A BOOK</span>
+                        </button>
+                    </section>
+
+                    <div class="aside-scrollable">
+                        <section class="aside-section aside-section-border">
+                            <ul class="aside-list">
+                                <li>
+                                    <button title="Now Reading">
+                                        <i class="fas fa-book skewx15"></i>
+                                        <span>Now Reading</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button title="Browse">
+                                        <i class="fas fa-globe-asia"></i>
+                                        <span>Browse</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button title="Buy Books">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        <span>Buy Books</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button title="Favourite Books">
+                                        <i class="fas fa-star"></i>
+                                        <span>Favourite Books</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button title="Wishlist">
+                                        <i class="fas fa-th-list"></i>
+                                        <span>Wishlist</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button title="History">
+                                        <i class="far fa-clock"></i>
+                                        <span>History</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </section >
+                        <section class="aside-section aside-section-border">
+                            <ul class="aside-list aside-categories">
+                                <li>
+                                    <button title="Must Read Titles">
+                                        <i class="fas fa-circle" style="color:#e64c66"></i>
+                                        <span>Must Read Titles</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button title="Best Of List">
+                                        <i class="fas fa-circle" style="color:#ffab00"></i>
+                                        <span>Best Of List</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button title="Classic Novels">
+                                        <i class="fas fa-circle" style="color:#00bfdd"></i>
+                                        <span>Classic Novels</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button title="Non Fiction">
+                                        <i class="fas fa-circle" style="color:#7874cf"></i>
+                                        <span>Non Fiction</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="aside-section">
+                            <ul class="aside-list aside-reminder">
+                                <li class="fb-row fb-start fb-top">
+                                    <i class="far fa-clock"></i>
+                                    <p>
+                                        You added <strong>Fight Club</strong> by <strong>Chuck Palahniuk</strong> to your <strong>Must Read Titles</strong>. <br><br>
+                                        24 minutes ago
+                                    </p>
+                                </li>
+                                <li class="fb-row fb-start fb-top">
+                                    <i class="far fa-clock"></i>
+                                    <p>
+                                        You added <strong>The Trial</strong> by <strong>Franz Kafka</strong> to your <strong>Must Read Titles</strong>. <br><br>
+                                        48 minutes ago
+                                    </p>
+                                </li>
+                            </ul>
+
+                        </section>
+                    </div>
+                </div>
+            </div>
         </aside>
 
         <header class="main-header">
-            <div class="fb-row fb-start main-logo main-header-border">
-                <h1><a href="">Browse Available Books</a></h1>
-            </div>
-            <div class="main-header-border">
-                <nav class="fb-row fb-between main-nav">
-                    <ul class="fb-row fb-start main-nav-navlist">
-                        <li><a href="">All Books</a></li>
-                        <li><a href="">Most Recent</a></li>
-                        <li><a href="">Most Popular</a></li>
-                        <li><a href="">Free Books</a></li>
-                    </ul>
-                    <input type="text" class="main-nav-input" placeholder="Enter Keywords">
+            <div class="fb-row fb-between main-nav">
+                <a href="#" id="main-nav-burger" class="main-nav-burger hidden"><i class="fas fa-bars"></i></a>
+                <ul id="main-nav-dropdown" class="main-nav-navlist toggled">
+                    <li><a href="#">All Books</a></li>
+                    <li><a href="#">Most Recent</a></li>
+                    <li><a href="#">Most Popular</a></li>
+                    <li><a href="#">Free Books</a></li>
+                </ul>
 
-                </nav>
+                <div class="input-container">
+                    <form action="" name="keywords" id="input-keywords" class="input-form toggled">
+                        <input type="text" name="keywords_input" class="main-nav-input" placeholder="Enter Keywords">
+                    </form>
+                    <a href="#" id="input-icon"><i class="fas fa-search input-icon"></i></a>
+                </div>
+
             </div>
+            <div class="fb-row fb-between main-header-border main-logo">
+                <h1><a href="#">Browse Available Books</a></h1>
+            </div>
+            <div class="main-header-border main-nav-container">
+
+            </div>
+
         </header>
 
         <section class="fb-row fb-start fb-top main-thumbnail-container">
             <div class="thumbnail-container">
-                <img src="src/img/book-cover.jpg" alt="">
+                <a href="#"><img src="src/img/book-cover.jpg" alt=""></a>
                 <div class="thumbnail-caption">
                     <p class="item-name">Jewels of Nizam</p>
                     <p class="item-author">by Geeta Devi</p>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+                    <form action="">
+                        <span class="star-container">
+                        <label class="star-i fas fa-star" for="1star1"></label>
+                        <input class="star-btn" id="1star1" type="radio" name="rating1" value="1">
+                        <label class="star-i fas fa-star" for="1star2"></label>
+                        <input class="star-btn" id="1star2" type="radio" name="rating1" value="2">
+                        <label class="star-i fas fa-star" for="1star3"></label>
+                        <input class="star-btn" id="1star3" type="radio" name="rating1" value="3">
+                        <label class="star-i fas fa-star" for="1star4"></label>
+                        <input class="star-btn" id="1star4" type="radio" name="rating1" value="4">
+                        <label class="star-i fas fa-star" for="1star5"></label>
+                        <input class="star-btn" id="1star5" type="radio" name="rating1" value="5" checked>
+                        </span>
+                    </form>
+
                 </div>
             </div>
             <div class="thumbnail-container">
-                <img src="src/img/book-cover2.jpg" alt="">
+                <a href="#"><img src="src/img/book-cover2.jpg" alt=""></a>
                 <div class="thumbnail-caption">
                     <p class="item-name">Cakes & Bakes</p>
                     <p class="item-author">by Sanjeev Kapoor</p>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+                    <form action="">
+                        <span class="star-container">
+                        <label class="star-i fas fa-star" for="2star1"></label>
+                        <input class="star-btn" id="2star1" type="radio" name="rating2" value="1">
+                        <label class="star-i fas fa-star" for="2star2"></label>
+                        <input class="star-btn" id="2star2" type="radio" name="rating2" value="2">
+                        <label class="star-i fas fa-star" for="2star3"></label>
+                        <input class="star-btn" id="2star3" type="radio" name="rating2" value="3">
+                        <label class="star-i fas fa-star" for="2star4"></label>
+                        <input class="star-btn" id="2star4" type="radio" name="rating2" value="4">
+                        <label class="star-i fas fa-star" for="2star5"></label>
+                        <input class="star-btn" id="2star5" type="radio" name="rating2" value="5" checked>
+                        </span>
+                    </form>
                 </div>
             </div>
             <div class="thumbnail-container">
-                <img src="src/img/book-cover3.jpg" alt="">
+                <a href="#"><img src="src/img/book-cover3.jpg" alt=""></a>
                 <div class="thumbnail-caption">
                     <p class="item-name">Jamie’s Kitchen</p>
                     <p class="item-author">by Jamie Oliver</p>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+                    <form action="">
+                        <span class="star-container">
+                        <label class="star-i fas fa-star" for="3star1"></label>
+                        <input class="star-btn" id="3star1" type="radio" name="rating3" value="1">
+                        <label class="star-i fas fa-star" for="3star2"></label>
+                        <input class="star-btn" id="3star2" type="radio" name="rating3" value="2">
+                        <label class="star-i fas fa-star" for="3star3"></label>
+                        <input class="star-btn" id="3star3" type="radio" name="rating3" value="3">
+                        <label class="star-i fas fa-star" for="3star4"></label>
+                        <input class="star-btn" id="3star4" type="radio" name="rating3" value="4" checked>
+                        <label class="star-i fas fa-star" for="3star5"></label>
+                        <input class="star-btn" id="3star5" type="radio" name="rating3" value="5">
+                        </span>
+                    </form>
                 </div>
             </div>
             <div class="thumbnail-container">
-                <img src="src/img/book-cover4.jpg" alt="">
+                <a href="#"><img src="src/img/book-cover4.jpg" alt=""></a>
                 <div class="thumbnail-caption">
                     <p class="item-name">Inexpensive Family Meals</p>
                     <p class="item-author">by Simon Holst</p>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
+                    <form action="">
+                        <span class="star-container">
+                        <label class="star-i fas fa-star" for="4star1"></label>
+                        <input class="star-btn" id="4star1" type="radio" name="rating4" value="1">
+                        <label class="star-i fas fa-star" for="4star2"></label>
+                        <input class="star-btn" id="4star2" type="radio" name="rating4" value="2">
+                        <label class="star-i fas fa-star" for="4star3"></label>
+                        <input class="star-btn" id="4star3" type="radio" name="rating4" value="3">
+                        <label class="star-i fas fa-star" for="4star4"></label>
+                        <input class="star-btn" id="4star4" type="radio" name="rating4" value="4" checked>
+                        <label class="star-i fas fa-star" for="4star5"></label>
+                        <input class="star-btn" id="4star5" type="radio" name="rating4" value="5">
+                        </span>
+                    </form>
                 </div>
             </div>
             <div class="thumbnail-container">
-                <img src="src/img/book-cover5.jpg" alt="">
+                <a href="#"><img src="src/img/book-cover5.jpg" alt=""></a>
                 <div class="thumbnail-caption">
                     <p class="item-name">Paleo Slow Cooking</p>
                     <p class="item-author">by Chrissy Gower</p>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+                    <form action="">
+                        <span class="star-container">
+                        <label class="star-i fas fa-star" for="5star1"></label>
+                        <input class="star-btn" id="5star1" type="radio" name="rating5" value="1">
+                        <label class="star-i fas fa-star" for="5star2"></label>
+                        <input class="star-btn" id="5star2" type="radio" name="rating5" value="2">
+                        <label class="star-i fas fa-star" for="5star3"></label>
+                        <input class="star-btn" id="5star3" type="radio" name="rating5" value="3">
+                        <label class="star-i fas fa-star" for="5star4"></label>
+                        <input class="star-btn" id="5star4" type="radio" name="rating5" value="4">
+                        <label class="star-i fas fa-star" for="5star5"></label>
+                        <input class="star-btn" id="5star5" type="radio" name="rating5" value="5" checked>
+                        </span>
+                    </form>
                 </div>
             </div>
             <div class="thumbnail-container">
-                <img src="src/img/book-cover6.jpg" alt="">
+                <a href="#"><img src="src/img/book-cover6.jpg" alt=""></a>
                 <div class="thumbnail-caption">
                     <p class="item-name">Cook Like an Italian</p>
                     <p class="item-author">by Tobie Puttock</p>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
+                    <form action="">
+                        <span class="star-container">
+                        <label class="star-i fas fa-star" for="6star1"></label>
+                        <input class="star-btn" id="6star1" type="radio" name="rating6" value="1">
+                        <label class="star-i fas fa-star" for="6star2"></label>
+                        <input class="star-btn" id="6star2" type="radio" name="rating6" value="2">
+                        <label class="star-i fas fa-star" for="6star3"></label>
+                        <input class="star-btn" id="6star3" type="radio" name="rating6" value="3">
+                        <label class="star-i fas fa-star" for="6star4"></label>
+                        <input class="star-btn" id="6star4" type="radio" name="rating6" value="4" checked>
+                        <label class="star-i fas fa-star" for="6star5"></label>
+                        <input class="star-btn" id="6star5" type="radio" name="rating6" value="5">
+                        </span>
+                    </form>
                 </div>
             </div>
             <div class="thumbnail-container">
-                <img src="src/img/book-cover7.jpg" alt="">
+                <a href="#"><img src="src/img/book-cover7.jpg" alt=""></a>
                 <div class="thumbnail-caption">
                     <p class="item-name">Suneeta Vaswani</p>
                     <p class="item-author">by Geeta Devi</p>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+                    <form action="">
+                        <span class="star-container">
+                        <label class="star-i fas fa-star" for="7star1"></label>
+                        <input class="star-btn" id="7star1" type="radio" name="rating7" value="1">
+                        <label class="star-i fas fa-star" for="7star2"></label>
+                        <input class="star-btn" id="7star2" type="radio" name="rating7" value="2">
+                        <label class="star-i fas fa-star" for="7star3"></label>
+                        <input class="star-btn" id="7star3" type="radio" name="rating7" value="3">
+                        <label class="star-i fas fa-star" for="7star4"></label>
+                        <input class="star-btn" id="7star4" type="radio" name="rating7" value="4" checked>
+                        <label class="star-i fas fa-star" for="7star5"></label>
+                        <input class="star-btn" id="7star5" type="radio" name="rating7" value="5">
+                        </span>
+                    </form>
                 </div>
             </div>
             <div class="thumbnail-container">
-                <img src="src/img/book-cover8.png" alt="">
+                <a href="#"><img src="src/img/book-cover8.png" alt=""></a>
                 <div class="thumbnail-caption">
                     <p class="item-name">Jamie Does</p>
                     <p class="item-author">by Jamie Oliver</p>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
+                    <form action="">
+                        <span class="star-container">
+                        <label class="star-i fas fa-star" for="8star1"></label>
+                        <input class="star-btn" id="8star1" type="radio" name="rating8" value="1">
+                        <label class="star-i fas fa-star" for="8star2"></label>
+                        <input class="star-btn" id="8star2" type="radio" name="rating8" value="2">
+                        <label class="star-i fas fa-star" for="8star3"></label>
+                        <input class="star-btn" id="8star3" type="radio" name="rating8" value="3">
+                        <label class="star-i fas fa-star" for="8star4"></label>
+                        <input class="star-btn" id="8star4" type="radio" name="rating8" value="4" checked>
+                        <label class="star-i fas fa-star" for="8star5"></label>
+                        <input class="star-btn" id="8star5" type="radio" name="rating8" value="5">
+                        </span>
+                    </form>
                 </div>
             </div>
             <div class="thumbnail-container">
-                <img src="src/img/book-cover9.jpg" alt="">
+                <a href="#"><img src="src/img/book-cover9.jpg" alt=""></a>
                 <div class="thumbnail-caption">
                     <p class="item-name">Jamie’s Italy</p>
                     <p class="item-author">by Jamie Oliver</p>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+                    <form action="">
+                        <span class="star-container">
+                        <label class="star-i fas fa-star" for="9star1"></label>
+                        <input class="star-btn" id="9star1" type="radio" name="rating9" value="1">
+                        <label class="star-i fas fa-star" for="9star2"></label>
+                        <input class="star-btn" id="9star2" type="radio" name="rating9" value="2">
+                        <label class="star-i fas fa-star" for="9star3"></label>
+                        <input class="star-btn" id="9star3" type="radio" name="rating9" value="3">
+                        <label class="star-i fas fa-star" for="9star4"></label>
+                        <input class="star-btn" id="9star4" type="radio" name="rating9" value="4" checked>
+                        <label class="star-i fas fa-star" for="9star5"></label>
+                        <input class="star-btn" id="9star5" type="radio" name="rating9" value="5">
+                        </span>
+                    </form>
                 </div>
             </div>
             <div class="thumbnail-container">
-                <img src="src/img/book-cover10.jpg" alt="">
+                <a href="#"><img src="src/img/book-cover10.jpg" alt=""></a>
                 <div class="thumbnail-caption">
                     <p class="item-name">Vegetables Cookbook</p>
                     <p class="item-author">by Matthew Biggs</p>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                    <i class="far fa-star"></i>
+                    <form action="">
+                        <span class="star-container">
+                        <label class="star-i fas fa-star" for="10star1"></label>
+                        <input class="star-btn" id="10star1" type="radio" name="rating10" value="1">
+                        <label class="star-i fas fa-star" for="10star2"></label>
+                        <input class="star-btn" id="10star2" type="radio" name="rating10" value="2">
+                        <label class="star-i fas fa-star" for="10star3"></label>
+                        <input class="star-btn" id="10star3" type="radio" name="rating10" value="3">
+                        <label class="star-i fas fa-star" for="10star4"></label>
+                        <input class="star-btn" id="10star4" type="radio" name="rating10" value="4" checked>
+                        <label class="star-i fas fa-star" for="10star5"></label>
+                        <input class="star-btn" id="10star5" type="radio" name="rating10" value="5">
+                        </span>
+                    </form>
                 </div>
             </div>
         </section>
@@ -250,6 +394,8 @@
         <button><i class="far fa-question-circle"></i></button>
         <button><i class="fas fa-cog"></i></button>
     </footer>
+
+    <script src="index.js"></script>
 
 </body>
 </html>

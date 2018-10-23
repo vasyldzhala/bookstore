@@ -1,0 +1,16 @@
+body {
+  overflow: hidden;
+}
+* {
+  font-family: "Proxima Nova Rg";
+  font-weight: normal;
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+}
+button, button:focus, input, input:focus, a, a:focus {
+  border: 0;
+  outline: 0;
+  padding: 0;
+}

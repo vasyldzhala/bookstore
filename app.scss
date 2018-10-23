@@ -1,0 +1,15 @@
+@import "src/scss/normalize.min.scss";
+
+@import "src/scss/_variables";
+@import "src/scss/_functions";
+
+@import "src/fa/fontawesome.scss";
+@import "src/fa/regular";
+@import "src/fa/solid";
+//@import "src/fonts/fonts";
+
+@import "src/scss/_atom";
+@import "src/scss/_base";
+@import "src/scss/_layout";
+
+@import "src/scss/components/_index";
