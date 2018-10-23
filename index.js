@@ -8,7 +8,6 @@
     const $toggleAsideButton = document.querySelector('#toggle-aside-button');
     const $asideToggled = document.querySelector('#aside-toggled');
 
-
     let isDropdownShown = false;
     let isInputShown = false;
     let isAsideToggled = true;
@@ -55,9 +54,8 @@
     };
 
     const toggleAside = () => {
-        console.log($asideToggled.classList);
         $asideToggled.classList.toggle('aside-toggled');
+        isAsideToggled = !isAsideToggled;
     }
-
 
 })();

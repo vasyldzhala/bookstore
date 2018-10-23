@@ -35,7 +35,7 @@
     line-height: 2;
     text-align: left;
     text-transform: capitalize;
-    color: #78829d;
+    color: get_col(aside-text);
     background-color: transparent;
     height: 38px;
     width: 100%;
@@ -47,9 +47,9 @@
       padding: 0 12px 0 22px;
     }
     &:hover {
-      background-color: #15a4fa;
+      background-color: get_col(aside-hov-bg);
       * {
-        color: #ffffff;
+        color: get_col(aside-hov-text);
       }
     }
   }
@@ -71,7 +71,7 @@
   }
   i, p {
     font-size: 12px;
-    color: #78829d;
+    color: get_col(aside-text);
     background-color: transparent;
   }
 }
@@ -84,15 +84,15 @@
     width: 80%;
     height: 40%;
     border-radius: 4px;
-    background-color: #f2795a;
+    background-color: get_col(button-add);
     font-size: 14px;
     font-weight: bold;
-    color: #ffffff;
+    color: get_col(aside-hov-text);
     transition-duration: 0.3s;
 
     &:hover {
-      color: #f2795a;
-      background-color: #ffffff;
+      color: get_col(button-add);
+      background-color: get_col(aside-hov-text);
     }
     i {
       padding: 0 10px;
@@ -136,12 +136,12 @@
       border-radius: 4px;
       font-size: 14px;
       font-weight: bold;
-      color: #ffffff;
+      color: get_col(aside-hov-text);
       background-color: transparent;
       transition-duration: 0.3s;
       i {
         font-size: 30px;
-        color: white;
+        color: get_col(aside-hov-text);
       }
     }
     .aside-toggled {

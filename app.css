@@ -4120,6 +4120,20 @@ readers do not read off random characters that represent icons */
   font-family: 'Font Awesome 5 Free';
   font-weight: 900; }
 
+@font-face {
+  font-family: 'Proxima Nova Rg';
+  src: url("src/fonts/ProximaNova-Regular.eot");
+  src: local("Proxima Nova Regular"), local("ProximaNova-Regular"), url("src/fonts/ProximaNova-Regular.eot?#iefix") format("embedded-opentype"), url("src/fonts/ProximaNova-Regular.woff") format("woff"), url("src/fonts/ProximaNova-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova Rg';
+  src: url("src/fonts/ProximaNova-Bold.eot");
+  src: local("Proxima Nova Bold"), local("ProximaNova-Bold"), url("src/fonts/ProximaNova-Bold.eot?#iefix") format("embedded-opentype"), url("src/fonts/ProximaNova-Bold.woff") format("woff"), url("src/fonts/ProximaNova-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
 .fb-row {
   display: flex;
   flex-direction: row;
@@ -4615,7 +4629,7 @@ main {
     transition-duration: 0.3s; }
     .toggle-aside-button i {
       font-size: 30px;
-      color: white; }
+      color: #ffffff; }
   .aside-toggled .toggle-aside-button i {
     transform: rotate(180deg); }
   .aside-toggled .aside-container {

@@ -45,11 +45,11 @@
   }
   .item-name {
     font-size: 16px;
-    color: #444c63;
+    color: get_col(logo-text);
   }
   .item-author {
     font-size: 12px;
-    color: #6f7d95;
+    color: get_col(item-author);
     margin-bottom: 5px;
   }
 }
@@ -58,11 +58,11 @@
 }
 .star-i {
   font-size: 13px;
-  color: #ffab00;
+  color: get_col(star);
   cursor: pointer;
   transition-duration: 0.2s;
 }
 .star-i:hover ~ .star-i,
 .star-btn:checked ~ .star-i {
-  color: #ffe89d;
+  color: get_col(star-out);
 }

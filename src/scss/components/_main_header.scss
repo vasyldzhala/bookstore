@@ -19,7 +19,7 @@
     margin: 0;
     padding-left: 22px;
     a {
-      color: #444c63;
+      color: get_col(logo-text);
     }
   }
   &-nav {
@@ -49,13 +49,13 @@
       margin-left: 5px;
       border-radius: 10px;
       font-size: 12px;
-      color: #97b3ce;
+      color: get_col(nav-text);
       background-color: transparent;
       transition-duration: 0.3s;
 
       &:hover {
-        color: #eef1f7;
-        background-color: #97b3ce;
+        color: get_col(main-header-bg);
+        background-color: get_col(nav-text);
       }
     }
 
@@ -93,7 +93,7 @@
   }
 }
 .input-icon {
-  color: #8c97b2;
+  color: get_col(nav-icon);
   font-size: 13px;
   cursor: pointer;
 }
@@ -135,7 +135,7 @@
       border-radius: 5px;
       box-shadow: 0 1px #dadfea, 0 2px #f4f6fa;
       list-style: none;
-      background-color: #eef1f7;
+      background-color: get_col(main-header-bg);
       text-align: center;
       animation-name: smooth-appearance;
       animation-duration: 0.2s;
@@ -153,7 +153,7 @@
       right: 20px;
       width: 170px;
       padding: 10px;
-      background-color: #eef1f7;
+      background-color: get_col(main-header-bg);
       border-radius: 5px;
       text-align: center;
       box-shadow: 0 1px #dadfea, 0 2px #f4f6fa;

@@ -4,16 +4,16 @@
   button {
     width: 55px;
     height: 100%;
-    background-color: #1f2637;
+    background-color: get_col(footer-button-bg);
     transition-duration: 0.3s;
 
     &:hover {
-      background-color: #15a4fa;
+      background-color: get_col(aside-hov-bg);
     }
 
     i {
       font-size: 14px;
-      color: #ffffff;
+      color: get_col(aside-hov-text);
     }
   }
 }

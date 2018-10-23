@@ -6,10 +6,9 @@
 @import "src/fa/fontawesome.scss";
 @import "src/fa/regular";
 @import "src/fa/solid";
-//@import "src/fonts/fonts";
+@import "src/fonts/fonts.scss";
 
 @import "src/scss/_atom";
 @import "src/scss/_base";
 @import "src/scss/_layout";
-
 @import "src/scss/components/_index";
